@@ -34,7 +34,7 @@ When using `enable` and `disable`, if you pass `--dryrun` no files will actually
 You can also run custom hook command (eg. update) with `yaghm update`. If any hooks in your config [specify the command](doc/config.md), it will be executed.
 
 ## Install
-Run `pip install .` in the repo root.
+Install with `pip install yaghm`
 
 ## Further reading
 
