@@ -38,7 +38,6 @@ Run `pip install .` in the repo root.
 
 ## Further reading
 
-* [Background](doc/background.md)
 * [How it works](doc/technical.md)
 * [Config syntax](doc/config.md)
 * [Developing hooks](doc/custom-hooks.md)
