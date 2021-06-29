@@ -1,9 +1,11 @@
 from distutils.core import setup
+from pathlib import Path
 
 setup(
     name="yaghm",
-    version="0.1.0",
+    version="0.1.1",
     description="Minimal git hook manager for the command line.",
+    long_description=Path("README.md").read_text(),
     url="https://www.github.com/metov/yaghm",
     author="Azat Akhmetov",
     author_email="azatinfo@yandex.com",
