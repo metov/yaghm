@@ -14,6 +14,7 @@ setup(
     author_email="azatinfo@yandex.com",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
+    package_data={"": ["templates/*"]},
     install_requires=[
         "coloredlogs",
         "docopt",
