@@ -1,6 +1,8 @@
 from distutils.core import setup
 from pathlib import Path
 
+from setuptools import find_packages
+
 setup(
     name="yaghm",
     version="0.1.4",
@@ -10,6 +12,7 @@ setup(
     url="https://www.github.com/metov/yaghm",
     author="Azat Akhmetov",
     author_email="azatinfo@yandex.com",
+    packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
         "coloredlogs",
