@@ -3,7 +3,7 @@ from pathlib import Path
 
 setup(
     name="yaghm",
-    version="0.1.3",
+    version="0.1.4",
     description="Minimal git hook manager for the command line.",
     long_description=Path("README.md").read_text(),
     long_description_content_type="text/markdown",
