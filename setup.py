@@ -5,7 +5,7 @@ from setuptools import find_packages
 
 setup(
     name="yaghm",
-    version="0.1.5",
+    version="0.2.0",
     description="Minimal git hook manager for the command line.",
     long_description=Path("README.md").read_text(),
     long_description_content_type="text/markdown",
