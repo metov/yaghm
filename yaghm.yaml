@@ -1,0 +1,5 @@
+# Hooks for this repository; but also an example
+
+pre-commit:
+  - black --check .
+  - require_version_bump master setup.py
