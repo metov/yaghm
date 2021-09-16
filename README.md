@@ -6,7 +6,7 @@ Yaghm is a minimal [git hook](https://git-scm.com/book/en/v2/Customizing-Git-Git
 * **Your** workflow, not mine. You can store the config wherever you want. Maybe you version your hooks, maybe you don't, maybe you keep them in a separate repo, or your home dir, or your dotfiles...
 
 ## Usage
-To use yaghm, you create a config that lists your hook commands (see [detailed syntax](config.md)):
+To use yaghm, you create a config that lists your hook commands (see [detailed syntax](doc/config.md)):
 
 ```yaml
 pre-commit:
