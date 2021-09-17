@@ -10,7 +10,7 @@ Usage:
 
 Options:
     --conf PATH  Use given config instead of yaghm.yaml in repo root
-    --dryrun  Only echo what would have been done, don't actually do it.
+    --dryrun  Only echo what would have been done, don't actually do it
     -y  Non interactive mode, assume safe defaults instead of prompting user
 """
 import subprocess
