@@ -1,0 +1,11 @@
+# Hooks for this repository; but also an example
+# To activate, run in the repo root: yaghm enable .
+
+pre-commit:
+  # The value of enable is the command that will be executed by the hook
+  - enable: require_version_bump master setup.py
+    # Additional keys like install are so that we can do yaghm install .
+    install: pip install metovhooks
+
+  # If we're only specifying the command, we can omit the enable
+  - black --check .
