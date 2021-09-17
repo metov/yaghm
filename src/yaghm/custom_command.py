@@ -14,13 +14,7 @@ from pathlib import Path
 from docopt import docopt
 
 from yaghm import log
-from yaghm.lib import (
-    hooks_path,
-    VALID_HOOKS,
-    render_wrapper,
-    commands_path,
-    load_config,
-)
+from yaghm.lib import VALID_HOOKS, load_config
 
 
 def main(command_name, argv):
