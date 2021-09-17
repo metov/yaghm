@@ -12,6 +12,11 @@ setup(
     url="https://www.github.com/metov/yaghm",
     author="Azat Akhmetov",
     author_email="azatinfo@yandex.com",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "Development Status :: 3 - Alpha",
+        "License :: OSI Approved :: MIT License",
+    ],
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     package_data={"": ["templates/*"]},
