@@ -2,6 +2,7 @@
 from pathlib import Path
 
 from jinja2 import Environment, PackageLoader
+from ruamel.yaml import YAML
 
 from yaghm import log
 
@@ -50,3 +51,13 @@ def backup_path(wrapper_path):
 
 def commands_path(phooks, hook):
     return Path(phooks) / f"{hook}.yaghm.commands"
+
+
+def load_config(config_path: Path):
+    if not config_path.exists():
+        log.critical(f"File does not exist: {config_path}")
+        exit(1)
+
+    yaml = YAML()
+    config = yaml.load(config_path.open())
+    return config

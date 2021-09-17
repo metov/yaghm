@@ -18,7 +18,6 @@ from pathlib import Path
 
 import questionary
 from docopt import docopt
-from ruamel.yaml import YAML
 
 from yaghm import log
 from yaghm.lib import (
@@ -28,6 +27,7 @@ from yaghm.lib import (
     render_wrapper,
     backup_path,
     commands_path,
+    load_config,
 )
 
 
@@ -41,21 +41,16 @@ def main(argv):
 
     conf_override = args["--conf"]
     pconf = Path(conf_override) if conf_override else prepo / "yaghm.yaml"
-    if not pconf.exists():
-        log.critical(f"File does not exist: {pconf}")
-        exit(1)
+    config = load_config(pconf)
 
     dryrun = bool(args["--dryrun"])
     noask = bool(args["-y"])
 
-    enable_hooks(prepo, pconf, dryrun, noask)
+    enable_hooks(prepo, config, dryrun, noask)
 
 
-def enable_hooks(prepo, pconf, dryrun, noask):
-    yaml = YAML()
-    config = yaml.load(pconf.open())
+def enable_hooks(prepo, config, dryrun, noask):
     hooks = collect_hook_commands(config)
-
     for stage, hooks in hooks.items():
         make_wrapper(prepo, stage, dryrun)
         make_commands(prepo, stage, hooks, dryrun)
