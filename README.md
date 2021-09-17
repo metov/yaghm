@@ -16,8 +16,8 @@ pre-commit:
   - enable: black --check .
     install: pip install black
     update: pip install -U black
-  - enable: require_version_bump
-    update: pip install -U black
+  - enable: require_version_bump master setup.py
+    update: pip install -U metovhooks
 
 post-commit:
   - ...
@@ -31,7 +31,7 @@ You can use `yaghm -h` to see general help. There are three main subcommands (wh
 
 When using `enable` and `disable`, if you pass `--dryrun` no files will actually be written.
 
-You can also run custom hook command (eg. update) with `yaghm update`. If any hooks in your config [specify the command](doc/config.md), it will be executed.
+You can also run custom hook commands (e.g. update) with `yaghm update`. If any hooks in your config [specify the command](doc/config.md), it will be executed.
 
 ## Install
 Install with `pip install yaghm`
