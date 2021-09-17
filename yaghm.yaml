@@ -3,11 +3,14 @@
 
 pre-commit:
   # The value of enable is the command that will be executed by the hook
-  - enable: require_version_bump master setup.py
+  - enable: black --check .
     # Additional keys like install are so that we can do: yaghm install .
+    install: pip install black
+
+  - enable: protect_branch master
     install: pip install metovhooks
     # Custom commands: This one will be executed by: yaghm update
     update: pip install -U metovhooks
 
   # If we're only specifying the command, we can omit the enable
-  - black --check .
+  - require_version_bump master setup.py
