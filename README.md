@@ -16,8 +16,8 @@ pre-commit:
   - enable: black --check .
     install: pip install black
     update: pip install -U black
-  - enable: require_version_bump
-    update: pip install -U black
+  - enable: require_version_bump master setup.py
+    update: pip install -U metovhooks
 
 post-commit:
   - ...
