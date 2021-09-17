@@ -6,6 +6,7 @@ Usage:
     yaghm [--log LEVEL] enable [<args>...]
     yaghm [--log LEVEL] list [<args>...]
     yaghm [--log LEVEL] disable [<args>...]
+    yaghm [--log LEVEL] CMDNAME [<args>...]
 
 Options:
     --log LEVEL  Minimum level of logs to print [default: INFO]
@@ -14,7 +15,7 @@ import logging
 
 from docopt import docopt
 
-from yaghm import log, enable, disable, list_hooks
+from yaghm import log, enable, disable, list_hooks, custom_command
 
 
 def main():
@@ -32,6 +33,5 @@ def main():
         disable.main(argv)
     elif args["list"]:
         list_hooks.main(argv)
-        # TODO: Implement custom commands
     else:
-        log.critical("Should not have been allowed to reach this point by docopt.")
+        custom_command.main(args["CMDNAME"], argv)
