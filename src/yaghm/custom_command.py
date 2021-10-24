@@ -5,7 +5,7 @@ Usage:
     CMDNAME [options]
 
 Options:
-    --conf PATH  Use given config instead of yaghm.yaml in current working directory
+    --conf PATH  Use given config instead of yaghm.yml in current working directory
     --dryrun  Only echo what would have been done, don't actually do it
 """
 import subprocess
@@ -22,7 +22,7 @@ def main(command_name, argv):
 
     log.debug(f"Arguments:\n{args}")
 
-    pconf = Path(args["--conf"] or "yaghm.yaml")
+    pconf = Path(args["--conf"] or "yaghm.yml")
     config = load_config(pconf)
 
     for hook in VALID_HOOKS:

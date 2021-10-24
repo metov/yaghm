@@ -9,7 +9,7 @@ Usage:
     enable REPO [options]
 
 Options:
-    --conf PATH  Use given config instead of yaghm.yaml in repo root
+    --conf PATH  Use given config instead of yaghm.yml in repo root
     --dryrun  Only echo what would have been done, don't actually do it
     -y  Non interactive mode, assume safe defaults instead of prompting user
 """
@@ -40,7 +40,7 @@ def main(argv):
     require_repo_exists(prepo)
 
     conf_override = args["--conf"]
-    pconf = Path(conf_override) if conf_override else prepo / "yaghm.yaml"
+    pconf = Path(conf_override) if conf_override else prepo / "yaghm.yml"
     config = load_config(pconf)
 
     dryrun = bool(args["--dryrun"])
