@@ -5,7 +5,7 @@ from setuptools import find_packages
 
 setup(
     name="yaghm",
-    version="0.3.1",
+    version="0.3.2",
     description="Minimal git hook manager for the command line.",
     long_description=Path("README.md").read_text(),
     long_description_content_type="text/markdown",
@@ -17,8 +17,7 @@ setup(
         "Development Status :: 3 - Alpha",
         "License :: OSI Approved :: MIT License",
     ],
-    packages=find_packages(where="src"),
-    package_dir={"": "src"},
+    packages=find_packages(),
     package_data={"": ["templates/*"]},
     install_requires=[
         "coloredlogs",
