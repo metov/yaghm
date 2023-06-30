@@ -27,6 +27,7 @@ setup(
         "Jinja2",
         "PyYAML",
         "questionary",
+        "ruamel.yaml",
     ],
     entry_points={
         "console_scripts": [
